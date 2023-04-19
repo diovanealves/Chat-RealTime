@@ -10,5 +10,5 @@ import { Chat } from "./components/Chat";
 export function App() {
   const [user] = useAuthState(getAuth(app));
 
-  return <>{user ? <Chat /> : <SignIn />}</>;
+  return <>{user ? <Chat user={user} /> : <SignIn />}</>;
 }
