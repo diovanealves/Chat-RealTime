@@ -8,8 +8,7 @@ import { SignIn } from "./components/SignIn";
 import { Chat } from "./components/Chat";
 
 export function App() {
-  const auth = getAuth(app);
-  const [user] = useAuthState(auth);
+  const [user] = useAuthState(getAuth(app));
 
   return <>{user ? <Chat /> : <SignIn />}</>;
 }
