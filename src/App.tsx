@@ -1,14 +1,13 @@
 import "./style/global.css";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import { app } from "./config/firebase";
-import { getAuth } from "firebase/auth";
+import { auth } from "./config/firebase";
 
 import { SignIn } from "./components/SignIn";
-import { Chat } from "./components/Chat";
+import { ChatBox } from "./components/ChatBox";
 
 export function App() {
-  const [user] = useAuthState(getAuth(app));
+  const [user] = useAuthState(auth);
 
-  return <>{user ? <Chat user={user} /> : <SignIn />}</>;
+  return <>{!user ? <SignIn /> : <ChatBox />}</>;
 }
