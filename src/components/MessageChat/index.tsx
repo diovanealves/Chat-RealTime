@@ -15,7 +15,7 @@ export function MessageChat(props: { message: MessageProps }) {
 
   return (
     <div
-      className={`w-full flex py-2 px-3  gap-3 ${
+      className={` w-full flex items-center py-2 px-3  gap-3 ${
         message.uid === user?.uid
           ? "flex-row-reverse justify-start text-end"
           : "justify-start"
@@ -26,7 +26,7 @@ export function MessageChat(props: { message: MessageProps }) {
         alt="Foto do usuario"
         className="w-12 h-12 rounded-full"
       />
-      <div className="">
+      <div className="w-3/4 break-words">
         <p className="text-slate-400 opacity-70 ">{message.name}</p>
         <p>{message.text}</p>
         <p></p>
