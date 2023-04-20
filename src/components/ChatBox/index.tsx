@@ -12,6 +12,7 @@ import { SendMessage } from "../SendMessage";
 
 interface Message {
   id: string;
+  uid: string;
   name: string;
   text: string;
   avatar: string;
@@ -33,6 +34,7 @@ export function ChatBox() {
         const data = doc.data();
         messages.push({
           id: doc.id,
+          uid: data.uid,
           name: data.name,
           text: data.text,
           avatar: data.avatar,
@@ -45,10 +47,12 @@ export function ChatBox() {
   }, []);
 
   return (
-    <div>
-      {messages.map((msg) => (
-        <MessageChat key={msg.id} message={msg} />
-      ))}
+    <div className="w-3/4 h-screen mx-auto flex flex-col items-center justify-center">
+      <div className="w-full max-h-full h-4/5 overflow-y-scroll scrollbar">
+        {messages.map((msg) => (
+          <MessageChat key={msg.id} message={msg} />
+        ))}
+      </div>
       <SendMessage />
     </div>
   );

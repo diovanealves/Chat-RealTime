@@ -2,7 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-background text-text;
   -webkit-font-smoothing: antialiased;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #00b37e;
+  border-radius: 5px;
 }
