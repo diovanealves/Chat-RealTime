@@ -1,6 +1,7 @@
+import { SignOut } from "@phosphor-icons/react";
 import { auth } from "../../config/firebase";
 
-export function SignOut() {
+export function Logout() {
   function signOut() {
     auth.signOut();
   }
@@ -9,9 +10,10 @@ export function SignOut() {
     <button
       type="button"
       onClick={signOut}
-      className="absolute top-4 right-5 border-2 px-5 py-2 rounded-lg hover:bg-white hover:text-black"
+      className="absolute flex items-center gap-3 top-4 right-5 border-2 px-5 py-2 rounded-lg hover:bg-white hover:text-black"
     >
-      Sign Out
+      <SignOut size={20} />
+      Sair
     </button>
   );
 }

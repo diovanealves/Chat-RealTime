@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { db } from "../../config/firebase";
 import { MessageChat } from "../MessageChat";
 import { SendMessage } from "../SendMessage";
-import { SignOut } from "../SignOut";
+import { Logout } from "../SignOut";
 
 interface Message {
   id: string;
@@ -49,7 +49,7 @@ export function ChatBox() {
 
   return (
     <div className="w-3/4 h-screen mx-auto flex flex-col items-center justify-center">
-      <SignOut />
+      <Logout />
       <div className="w-full max-h-full h-4/5 overflow-y-scroll scrollbar">
         {messages.map((msg) => (
           <MessageChat key={msg.id} message={msg} />
